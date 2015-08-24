@@ -1,0 +1,79 @@
+19:17:12 :birch.scoutlink.net 001 Douwe :Welcome to the ScoutLink IRC Network Douwe!~Egberts@de.koffiejongen.org
+19:17:12 :birch.scoutlink.net 002 Douwe :Your host is birch.scoutlink.net, running version InspIRCd-2.0
+19:17:12 :birch.scoutlink.net 003 Douwe :This server was created 08:58:35 Aug 26 2014
+19:17:12 :birch.scoutlink.net 004 Douwe birch.scoutlink.net InspIRCd-2.0 BHIRSWchikorswx ABCDFHIJKLMNOPQRSTVYabcefhijklmnopqrstuvz FHIJLVYabefhjkloqv
+19:17:12 :birch.scoutlink.net 005 Douwe AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,FHJLfjl,ABCDKMNOPQRSTcimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ABCNOQRSTUcmrsz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+19:17:12 :birch.scoutlink.net 005 Douwe MAXBANS=60 MAXCHANNELS=20 MAXPARA=32 MAXTARGETS=20 MODES=20 NAMESX NETWORK=ScoutLink NICKLEN=31 OPERLOG OVERRIDE PREFIX=(YqaohvV)!~&@%+- REMOVE SSL=[::]:6697 :are supported by this server
+19:17:12 :birch.scoutlink.net 005 Douwe STARTTLS STATUSMSG=!~&@%+- TOPICLEN=307 USERIP VBANLIST WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+19:17:12 :birch.scoutlink.net 042 Douwe 373AAAKY4 :your unique ID
+19:17:12 :birch.scoutlink.net 375 Douwe :birch.scoutlink.net message of the day
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :-      .$$$$ $$$$$ $$$$$$ $$  $$ $$$$$$ $$    $$ $$$   $$ $$  $$
+19:17:12 :birch.scoutlink.net 372 Douwe :-      $$$   $$    $$  $$ $$  $$   $$   $$    $$ $$$$  $$ $$ $$ 
+19:17:12 :birch.scoutlink.net 372 Douwe :-      `$$$. $$    $$  $$ $$  $$   $$   $$    $$ $$ $$ $$ $$$$
+19:17:12 :birch.scoutlink.net 372 Douwe :-        `$$ $$    $$  $$ $$  $$   $$   $$    $$ $$  $$$$ $$ $$
+19:17:12 :birch.scoutlink.net 372 Douwe :-      $$$$$ $$$$$ $$$$$$ $$$$$$   $$   $$$$$ $$ $$   $$$ $$  $$
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :-                Welcome to the ScoutLink IRC Network.
+19:17:12 :birch.scoutlink.net 372 Douwe :-                This is an official ScoutLink Server
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :-                 Network Policies - Strongly Enforced
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- * Please conduct yourself in a Scout/Guide-Like manner.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * No abusive behaviour - including, but not limited to: flooding & cloning
+19:17:12 :birch.scoutlink.net 372 Douwe :- * Bots of any type are PROHIBITED on this network and will be killed by an
+19:17:12 :birch.scoutlink.net 372 Douwe :-   irc operator without notice.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * All connected clients must respond to /ctcp requests so that an IRC Operator
+19:17:12 :birch.scoutlink.net 372 Douwe :-   may enforce the "NO BOT" policy stated above. Please ignore the bot checks
+19:17:12 :birch.scoutlink.net 372 Douwe :-   if you are not a bot.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * Do not be excessively idle on the server.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * No scripts for hacking or war.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * Fserves are not permitted here.
+19:17:12 :birch.scoutlink.net 372 Douwe :- * You are solely responsible for the actions of your client.
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- * For assistance:
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :-   If you prefer assistance via email, or have questions or concearns,
+19:17:12 :birch.scoutlink.net 372 Douwe :-   feel free to email hatt@scoutlink.net
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :-   If you prefer assistance in IRC please join the channel
+19:17:12 :birch.scoutlink.net 372 Douwe :-   #help by typing /join #help
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- ScoutLink is not responsible for traffic passed through its servers.
+19:17:12 :birch.scoutlink.net 372 Douwe :- Parents - Please supervise your child's IRC usage.
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- ABUSE concerning this network should be reported to:
+19:17:12 :birch.scoutlink.net 372 Douwe :- techteam@scoutlink.net. If reporting abusive clients,
+19:17:12 :birch.scoutlink.net 372 Douwe :- please include your name, IRC name, a timestamped log
+19:17:12 :birch.scoutlink.net 372 Douwe :- of the event(s) and output of the client(s) /whois.
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- QUESTIONS OR COMMENTS about ScoutLink should be sent to:
+19:17:12 :birch.scoutlink.net 372 Douwe :- council@scoutlink.net. Please do not send email requesting
+19:17:12 :birch.scoutlink.net 372 Douwe :- o:lines. We are NOT looking for IRC Operators, these types of
+19:17:12 :birch.scoutlink.net 372 Douwe :- requests will not receive any answer, affirmative or negative.
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- INFORMATION about our policies or other services may be found
+19:17:12 :birch.scoutlink.net 372 Douwe :- by visiting our web site at http://www.scoutlink.net.
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+19:17:12 :birch.scoutlink.net 372 Douwe :- 
+19:17:12 :birch.scoutlink.net 376 Douwe :End of message of the day.
+19:17:12 :birch.scoutlink.net 251 Douwe :There are 42 users and 48 invisible on 13 servers
+19:17:12 :birch.scoutlink.net 252 Douwe 37 :operator(s) online
+19:17:12 :birch.scoutlink.net 254 Douwe 85 :channels formed
+19:17:12 :birch.scoutlink.net 255 Douwe :I have 5 clients and 1 servers
+19:17:12 :birch.scoutlink.net 265 Douwe :Current Local Users: 5  Max: 18
+19:17:12 :birch.scoutlink.net 266 Douwe :Current Global Users: 90  Max: 105
+19:17:12 :birch.scoutlink.net 396 Douwe ScoutLink-e40a8ee3.koffiejongen.org :is now your displayed host
+19:17:12 :birch.scoutlink.net 900 Douwe Douwe!~Egberts@ScoutLink-e40a8ee3.koffiejongen.org Douwe :You are now logged in as Douwe
+19:17:13 :birch.scoutlink.net 332 Douwe #dutch : Welkom in #dutch, hét Nederlandse kanaal van ScoutLink. | Meld je nu aan als Dutchop---->>> https://sol.scouting.nl/hrm/vacancy/1523
+19:17:13 :birch.scoutlink.net 333 Douwe #dutch floepa 1435079668
+19:17:13 :birch.scoutlink.net 353 Douwe = #dutch :Roelke geejee caber floepa @ChanServ TheOmega Proton Guest32045 Max Douwe Jeebeevee Sciuro Wheeze_NL dodgems Cybermage Voske Iljan|AFK Lotje 
+19:17:13 :birch.scoutlink.net 366 Douwe #dutch :End of /NAMES list.
+20:20:25 :birch.scoutlink.net 401 Douwe Gysta_NL :No such nick/channel

@@ -1,0 +1,78 @@
+13:10:54 :fir.scoutlink.net 001 Douwe :Welcome to the ScoutLink IRC Network Douwe!~Egberts@de.koffiejongen.org
+13:10:54 :fir.scoutlink.net 002 Douwe :Your host is fir.scoutlink.net, running version InspIRCd-2.0
+13:10:54 :fir.scoutlink.net 003 Douwe :This server was created 12:04:28 Aug 26 2014
+13:10:54 :fir.scoutlink.net 004 Douwe fir.scoutlink.net InspIRCd-2.0 BHIRSWchikorswx ABCDFHIJKLMNOPQRSTVYabcefhijklmnopqrstuvz FHIJLVYabefhjkloqv
+13:10:54 :fir.scoutlink.net 005 Douwe AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,FHJLfjl,ABCDKMNOPQRSTcimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ABCNOQRSTUcmrsz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+13:10:54 :fir.scoutlink.net 005 Douwe MAXBANS=60 MAXCHANNELS=20 MAXPARA=32 MAXTARGETS=20 MODES=20 NAMESX NETWORK=ScoutLink NICKLEN=31 OPERLOG OVERRIDE PREFIX=(YqaohvV)!~&@%+- REMOVE SSL=157.161.57.2:6697 :are supported by this server
+13:10:54 :fir.scoutlink.net 005 Douwe STARTTLS STATUSMSG=!~&@%+- TOPICLEN=307 USERIP VBANLIST WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+13:10:54 :fir.scoutlink.net 042 Douwe 657AAAG9M :your unique ID
+13:10:54 :fir.scoutlink.net 375 Douwe :fir.scoutlink.net message of the day
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :-      .$$$$ $$$$$ $$$$$$ $$  $$ $$$$$$ $$    $$ $$$   $$ $$  $$
+13:10:54 :fir.scoutlink.net 372 Douwe :-      $$$   $$    $$  $$ $$  $$   $$   $$    $$ $$$$  $$ $$ $$ 
+13:10:54 :fir.scoutlink.net 372 Douwe :-      `$$$. $$    $$  $$ $$  $$   $$   $$    $$ $$ $$ $$ $$$$
+13:10:54 :fir.scoutlink.net 372 Douwe :-        `$$ $$    $$  $$ $$  $$   $$   $$    $$ $$  $$$$ $$ $$
+13:10:54 :fir.scoutlink.net 372 Douwe :-      $$$$$ $$$$$ $$$$$$ $$$$$$   $$   $$$$$ $$ $$   $$$ $$  $$
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :-                Welcome to the ScoutLink IRC Network.
+13:10:54 :fir.scoutlink.net 372 Douwe :-                This is an official ScoutLink Server
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :-                 Network Policies - Strongly Enforced
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :- * Please conduct yourself in a Scout/Guide-Like manner.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * No abusive behaviour - including, but not limited to: flooding & cloning
+13:10:54 :fir.scoutlink.net 372 Douwe :- * Bots of any type are PROHIBITED on this network and will be killed by an
+13:10:54 :fir.scoutlink.net 372 Douwe :-   irc operator without notice.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * All connected clients must respond to /ctcp requests so that an IRC Operator
+13:10:54 :fir.scoutlink.net 372 Douwe :-   may enforce the "NO BOT" policy stated above. Please ignore the bot checks
+13:10:54 :fir.scoutlink.net 372 Douwe :-   if you are not a bot.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * Do not be excessively idle on the server.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * No scripts for hacking or war.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * Fserves are not permitted here.
+13:10:54 :fir.scoutlink.net 372 Douwe :- * You are solely responsible for the actions of your client.
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :- * For assistance:
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:54 :fir.scoutlink.net 372 Douwe :-   If you prefer assistance via email, or have questions or concearns,
+13:10:54 :fir.scoutlink.net 372 Douwe :-   feel free to email hatt@scoutlink.net
+13:10:54 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :-   If you prefer assistance in IRC please join the channel
+13:10:55 :fir.scoutlink.net 372 Douwe :-   #help by typing /join #help
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :- ScoutLink is not responsible for traffic passed through its servers.
+13:10:55 :fir.scoutlink.net 372 Douwe :- Parents - Please supervise your child's IRC usage.
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :- ABUSE concerning this network should be reported to:
+13:10:55 :fir.scoutlink.net 372 Douwe :- techteam@scoutlink.net. If reporting abusive clients,
+13:10:55 :fir.scoutlink.net 372 Douwe :- please include your name, IRC name, a timestamped log
+13:10:55 :fir.scoutlink.net 372 Douwe :- of the event(s) and output of the client(s) /whois.
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :- QUESTIONS OR COMMENTS about ScoutLink should be sent to:
+13:10:55 :fir.scoutlink.net 372 Douwe :- council@scoutlink.net. Please do not send email requesting
+13:10:55 :fir.scoutlink.net 372 Douwe :- o:lines. We are NOT looking for IRC Operators, these types of
+13:10:55 :fir.scoutlink.net 372 Douwe :- requests will not receive any answer, affirmative or negative.
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :- INFORMATION about our policies or other services may be found
+13:10:55 :fir.scoutlink.net 372 Douwe :- by visiting our web site at http://www.scoutlink.net.
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 372 Douwe :- -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+13:10:55 :fir.scoutlink.net 372 Douwe :- 
+13:10:55 :fir.scoutlink.net 376 Douwe :End of message of the day.
+13:10:55 :fir.scoutlink.net 251 Douwe :There are 34 users and 46 invisible on 12 servers
+13:10:55 :fir.scoutlink.net 252 Douwe 31 :operator(s) online
+13:10:55 :fir.scoutlink.net 254 Douwe 82 :channels formed
+13:10:55 :fir.scoutlink.net 255 Douwe :I have 10 clients and 1 servers
+13:10:55 :fir.scoutlink.net 265 Douwe :Current Local Users: 10  Max: 14
+13:10:55 :fir.scoutlink.net 266 Douwe :Current Global Users: 80  Max: 105
+13:10:55 :fir.scoutlink.net 396 Douwe ScoutLink-e40a8ee3.koffiejongen.org :is now your displayed host
+13:10:55 :fir.scoutlink.net 900 Douwe Douwe!~Egberts@ScoutLink-e40a8ee3.koffiejongen.org Douwe :You are now logged in as Douwe
+13:10:56 :fir.scoutlink.net 332 Douwe #dutch : Welkom in #dutch, hét Nederlandse kanaal van ScoutLink. | Meld je nu aan als Dutchop---->>> https://sol.scouting.nl/hrm/vacancy/1523 
+13:10:56 :fir.scoutlink.net 333 Douwe #dutch geejee 1436684124
+13:10:56 :fir.scoutlink.net 353 Douwe = #dutch :Sciuro Cybermage TheOmega Voske_ Douwe Jeebeevee|AFK patate @ChanServ Wheeze_NL !Lotje Roelke floepainwonderland caber Iljan|AFK gbot48 dodgems 
+13:10:56 :fir.scoutlink.net 366 Douwe #dutch :End of /NAMES list.
