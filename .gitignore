@@ -1,11 +1,11 @@
 .*.swp
 *.pyc
 *.orig
-persist
+persist/
 config
 pep8.py
 .project
 .pydevproject
 *.db
 web
-log
+log/
