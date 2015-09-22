@@ -6,9 +6,6 @@ from util import hook
 
 '''plugin om punten te tellen van de verschillende andere bots op Scoutlink'''
 
-#bots = ['Jeebeevee','EA','Pimmetje']
-#string = '^([A-Za-z0-9_-]){2,31}\w\s(heeft)\s([0-9]){0,1}\d\s(punten gehaald.)$'
-
 # opbouw: naarbot [regex met tekst winnaar,locatie nick, locatie punten, als geen aantalpunten wat dan aan punten?]
 bots = {
     'EA':['^([A-Za-z0-9_-]){2,31}\w\s(Jouw score is)\s([0-9]){0,1}\d)$',0,4],
@@ -18,15 +15,7 @@ bots = {
     'Jeebeevee':['^([A-Za-z0-9_-]){2,31}\w\s(heeft)\s([0-9]){0,1}\d\s(punten gehaald.)$',0,2]
 }
 
-
-'''
-to do:
-- /ctcp nick number => geeft deelnemersnummer, deze opslaan in DB
----- [12:13:32] [NL_Nick NUMBERREPLY] ######
- - /ctcp nickname mail voor mail-adres ook in DB
-
-'''
-
+#<EA> geejee Jouw score is 1
 def ConnectSQL(bot):
     #mysql
     #haal gegevens op uit config file
@@ -51,6 +40,8 @@ def InputSQL(sql, bot):
     #query uitvoeren
     cur.execute(sql)
     msl.commit()
+    if msl:
+        msl.close()
 
 
 def OutputSQL(sql, bot):
@@ -58,24 +49,36 @@ def OutputSQL(sql, bot):
     # Open database connection
     cur, msl = ConnectSQL(bot)
     #query uitvoeren
+    result = ''
     try:
         cur.execute(sql)
         result = cur.fetchone()
     except MySQLdb.Error, e:
         result = ''
+    finally:
+        if msl:
+            msl.close()
     return result
+
 
 #ctcp terug met deelnemersnummer
 @hook.regex(r'^\x01NUMBERREPLY*')
-def getDLnummer(paraml, raw='', nick='', bot=None, pm=None):
-    #pm(nick +' === '+ paraml,'Jeebeevee')
-    sql = "UPDATE users SET DLnummer='%d' WHERE username='%s'" % (int(paraml),nick)
+def getDLnummer(inp, raw='', nick='', bot=None, pm=None):
+    complete = raw[1:].split(':',1) #Parse the message into useful data 
+    dlnummer = complete[1].split(' ')[1]
+    sql = "UPDATE users SET DLnummer='%s' WHERE username='%s'" % (dlnummer, nick)
     InputSQL(sql, bot)
-    #>>> u'PRIVMSG Gysta :\x01number\x01'
-    #19:49:59 Gysta Gysta [~ScoutLink@ScoutLink-3b4a2395.direct-adsl.nl] requested unknown CTCP NUMBERREPLY from Gysta: 123456
-    #>>> u'PRIVMSG Jeebeevee ::Gysta!~ScoutLink@ScoutLink-3b4a2395.direct-adsl.nl PRIVMSG Douwe :\x01NUMBERREPLY 123456\x01'
-    
 
+#ctcp terug met deelnemersmailadres
+@hook.regex(r'^\x01MAILREPLY*')
+def getDLmail(inp, raw='', nick='', bot=None, pm=None):
+    complete = raw[1:].split(':',1) #Parse the message into useful data 
+    dlmail = complete[1].split(' ')[1]
+    sql = "UPDATE users SET email='%s' WHERE username='%s'" % (dlmail, nick)
+    InputSQL(sql, bot)
+
+
+@hook.singlethread
 @hook.event('JOIN')
 def getHostname(paraml, raw='', bot=None, conn=None, notice=None):
     #user komt online in game kanaal
@@ -87,19 +90,21 @@ def getHostname(paraml, raw='', bot=None, conn=None, notice=None):
     nickname = info[0].split('!') #Nickname
     hostname = info[0].split('@') #hostname
 
-    sql = "SELECT * FROM users WHERE username = '%s' AND hostname = '%s'" % (nickname[0],hostname[1])
+    sql = "SELECT * FROM users WHERE username = '%s' AND hostname = '%s'" % (nickname[0],hostname[1] )
     nick_ids = OutputSQL(sql, bot)
-    print nick_ids[0]
     
-    if nick_ids[0] != '' or nick_ids[0] != None :
+    if nick_ids is not '' and nick_ids is not None:
+        print nick_ids
+        print "Joiner al bekend (exit)"
         return
 
     conn.cmd('PRIVMSG',[nickname[0],'\x01number\x01'])
+    conn.cmd('PRIVMSG',[nickname[0],'\x01mail\x01'])
 
     sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (nickname[0], 0,hostname[1],raw)
     InputSQL(sql, bot)
 
-
+@hook.singlethread
 @hook.event('NICK')
 def nickChange(paraml, raw='', bot=None, conn=None):
     #nick is veranderd, deze opslaan in db
@@ -111,29 +116,25 @@ def nickChange(paraml, raw='', bot=None, conn=None):
     new_nick = info[2] #new nickname
     hostname = info[0].split('@') #hostname
 
-    #conn.send('NOTICE Jeebeevee ' + new_nick + ' ' + old_nick[0])
+    sql_old = "SELECT id FROM users WHERE username = '%s' AND hostname = '%s'" % (old_nick[0], hostname[1] )
+    nick_ids = OutputSQL(sql_old, bot)
 
-    #sql_new = "SELECT * FROM users WHERE username = '%s' AND hostname = '%s'" % (new_nick, hostname[1])
-    sql_old = "SELECT * FROM users WHERE username = '%s' AND hostname = '%s'" % (old_nick[0], hostname[1])
-    #new_nick_exist = OutputSQL(sql_new, bot)
-    old_nick_exist = OutputSQL(sql_old, bot)
-    #conn.send('NOTICE Jeebeevee '+ old_nick_exist[1] + ' +++ ' + new_nick_exist[1])
-    if old_nick_exist[1] != '' or old_nick_exist[1] != None:
+    if nick_ids is not '' and nick_ids is not None:
+        print "Oude Nick bekend - update"
         # old nick bestaat, dus nick aanpassen
-        sql = "UPDATE users SET username='%s' WHERE username='%s'" % (new_nick,old_nick[0])
+        sql = "UPDATE users SET username='%s' WHERE username='%s'" % (new_nick, old_nick[0] )
         InputSQL(sql, bot)
-        #elif new_nick_exist[1] == '' and old_nick_exist[1] == '':
+
     else:
+        print "Oude Nick nog niet bekend - add"
         # old nick bestaat niet, dus toevoegen aan de DB
-        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%s' , '%d' , '%s' )" % (nickname[0],1,hostname[1],raw)
+        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (new_nick, 1, hostname[1], raw )
         InputSQL(sql, bot)
 
-        conn.cmd('PRIVMSG',[nickname[0],'\x01number\x01'])
+        conn.cmd('PRIVMSG',[new_nick,'\x01number\x01'])
+        conn.cmd('PRIVMSG',[new_nick,'\x01mail\x01'])
 
-    #elif new_nick_exist != '' and old_nick_exist == '':
-    #    sql = 
-
-
+@hook.singlethread
 @hook.event('PRIVMSG')
 def ReadPoints(paraml, nick='', raw='', bot=None):
     # tekst van bots?
@@ -144,11 +145,10 @@ def ReadPoints(paraml, nick='', raw='', bot=None):
         complete = raw[1:].split(':',1) #Parse the message into useful data              
         info = complete[0].split(' ') #all sender info
         msgpart = complete[1] # message
-        #sender = info[0].split('!') #sender username
         hostname = info[0].split('@')
 
         #hoort de tekst bij de bot? en geeft deze tekst de punten?
-        match = re.search(bots[nick][0],msgpart)
+        match = re.search(re.escape(bots[nick][0]), msgpart, re.M|re.I)
         if match:
             #haal de nick van de speler en het aantal punten uit de tekst
             words = msgpart.split(' ')
@@ -157,7 +157,7 @@ def ReadPoints(paraml, nick='', raw='', bot=None):
 
             sql = "SELECT id FROM users WHERE username = '%s'" % give_nick
             nick_id = OutputSQL(sql, bot)[0]
-            print nick_id
+
             # hackje voor EA. om alleen de punten te registreren die de laatste 10 vragen (minuten) zijn gehaald
             if nick == 'EA':
                 sql = "SELECT points, timestamp FROM points WHERE user_id = '%d' AND bot = 'EA' ORDER BY date DESC LIMIT 1" % nick_id
@@ -179,7 +179,7 @@ def ReadPoints(paraml, nick='', raw='', bot=None):
             else:
                 give_points = 1
 
-            sql = "INSERT INTO points (user_id, bot, points, nick) VALUES ( '%d' , '%s' , '%d' , '%s')" % (nick_id[0], nick, give_points, give_nick)
+            sql = "INSERT INTO points (user_id, bot, points, nick) VALUES ( '%d' , '%s' , '%d' , '%s')" % (nick_id, nick, give_points, give_nick)
             InputSQL(sql, bot)
 '''
 # ontvangen punten via NOTICE
@@ -194,12 +194,4 @@ def GetPoints(paraml, raw='', nick=''):
 
         #ctcp('','MAIL',msgpart)
         
-@hook.regex(r'^\x01MAILREPLY .*\x01$')
-def my_ctcp_hook(match, notice=None):
-    ctcp_contents = match.group(1)
-    ctcp(ctcp_contents,'VERSION','Jeebeevee')
-
-@hook.irc_raw("NOTICE")
-def not_test(irc_raw, notice=None):
-    notice('dus: %s' % irc_raw)
 '''
