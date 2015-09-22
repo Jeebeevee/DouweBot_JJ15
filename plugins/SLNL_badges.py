@@ -47,6 +47,7 @@ def OutputSQL(sql, bot):
     finally:
         if msl:
             msl.close()
+    #print result
     return result
 
 '''
@@ -96,7 +97,7 @@ def badges(paraml, raw='', nick='', bot=None, conn=None):
         give_nick_id = OutputSQL(sql_give, bot)
 
     unixtime = int(time.time())
-    sql_import = "INSERT INTO badges (badge, give_user_id, give_user, get_user, timestamp, approved, give_user_raw) VALUES ('%s', '%d', '%s', '%s', '%d', '%d', '%s' )" % (badge, give_nick_id[0], nickname[0], get_nick, unixtime, 0, raw)
+    sql_import = "INSERT INTO badges (badge, give_user_id, give_user, get_user, addtime, approved, give_user_raw) VALUES ('%s', '%d', '%s', '%s', '%d', '%d', '%s' )" % (badge, give_nick_id[0], nickname[0], get_nick, unixtime, 0, raw)
     print sql_import
     InputSQL(sql_import, bot)
 
@@ -126,7 +127,7 @@ def recievedBadges(paraml, raw='', nick='' , bot=None, conn=None):
     #sql_send = "SELECT id, username, hostname FROM users WHERE username = '%s'" % (send_nick )
     #send_nick = OutputSQL(sql_send, bot)
     #zoek de bijbehorende badge record
-    sql_badge = "SELECT id, give_user_id FROM badges WHERE give_user = '%s' AND get_user = '%s' AND timestamp <= '%d' AND timestamp >= '%d'" % (send_nick, nickname[0], timenow, oldtime)
+    sql_badge = "SELECT id, give_user_id FROM badges WHERE give_user = '%s' AND get_user = '%s' AND addtime <= '%d' AND addtime >= '%d'" % (send_nick, nick, timenow, oldtime)
     print sql_badge	
     badge_id = OutputSQL(sql_badge, bot)
     
