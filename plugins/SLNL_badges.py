@@ -89,7 +89,7 @@ def badges(paraml, raw='', nick='', bot=None, conn=None):
     give_nick_id = OutputSQL(sql_give, bot)
     #print give_nick_id
     if give_nick_id is '' or give_nick_id is None:
-        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (nickname[0], 2, hostname[1], raw )
+        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (nickname[0], 9981, hostname[1], raw )
         InputSQL(sql, bot)
         conn.cmd('PRIVMSG',[nickname[0],'\x01number\x01'])
         conn.cmd('PRIVMSG',[nickname[0],'\x01mail\x01'])
@@ -128,24 +128,33 @@ def recievedBadges(paraml, raw='', nick='' , bot=None, conn=None):
     #send_nick = OutputSQL(sql_send, bot)
     #zoek de bijbehorende badge record
     sql_badge = "SELECT id, give_user_id FROM badges WHERE give_user = '%s' AND get_user = '%s' AND addtime <= '%d' AND addtime >= '%d'" % (send_nick, nick, timenow, oldtime)
-    print sql_badge	
+    #print sql_badge	
     badge_id = OutputSQL(sql_badge, bot)
     
+    sql_give = "SELECT hostname, DLnummer FROM users WHERE id = '%d'" % badge_id[1]
+    give_nick = OutputSQL(sql_give, bot)
+
     #zoek gegevens van ontvangende user
     #get_nick_id = ""
     sql_get = "SELECT id FROM users WHERE username = '%s' AND hostname = '%s'" % (nickname[0], hostname[1] )
     get_nick_id = OutputSQL(sql_get, bot)
     if get_nick_id is '' or get_nick_id is None:
-        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (nickname[0], 3, hostname[1], raw )
+        sql = "INSERT INTO users (username, DLnummer, hostname, raw) VALUES ('%s' , '%d' , '%s' , '%s' )" % (nickname[0], 9982, hostname[1], raw )
         InputSQL(sql, bot)
         conn.cmd('PRIVMSG',[nickname[0],'\x01number\x01'])
         conn.cmd('PRIVMSG',[nickname[0],'\x01mail\x01'])
         sql_get = "SELECT id FROM users WHERE username = '%s' AND hostname = '%s'" % (nickname[0], hostname[1] )
         get_nick_id = OutputSQL(sql_get, bot)
+    
+    approved = 0
+    if give_nick[0] != hostname[1]:
+        approved = 1
+    else
+        approved = 0
 
-    print badge_id
-    sql_badge_update = "UPDATE badges SET get_user_id = '%d', approved = '%d', get_user_raw = '%s' WHERE id = '%d'" % (get_nick_id[0], 1, raw, badge_id[0])
-    print sql_badge_update
+    #print badge_id
+    sql_badge_update = "UPDATE badges SET get_user_id = '%d', approved = '%d', get_user_raw = '%s' WHERE id = '%d'" % (get_nick_id[0], approved, raw, badge_id[0])
+    #print sql_badge_update
     InputSQL(sql_badge_update, bot)
 
     #print raw

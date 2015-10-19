@@ -45,6 +45,14 @@ def onjoin(paraml, conn=None):
     if nickserv_password:
         conn.msg(nickserv_name, nickserv_command % nickserv_password)
         time.sleep(1)
+    
+    #hackje voor oper rechten/botline
+    oper_nickname = conn.conf.get('oper_nickname')
+    oper_password = conn.conf.get('oper_password')
+    if oper_password:
+        conn.cmd('OPER '+ oper_nickname +' '+ oper_password)
+        time.sleep(2)
+        conn.send('PART #opers')
 
     # set mode on self
     mode = conn.conf.get('mode')
@@ -54,6 +62,11 @@ def onjoin(paraml, conn=None):
     # join channels
     for channel in conn.conf.get("channels", []):
         conn.join(channel)
+        # hackje voor rechten via Lotje
+        if channel != '#dutchbots':
+            time.sleep(3)
+            conn.msg('#dutchbots','SETRIGHTS '+ channel +' TYCEmEMCznK5Ebyu8SZ')
+        #conn.cmd('MODE '+ channel +' +Y '+ conn.nick )
         time.sleep(1)  # don't flood JOINs
 
     # set user-agent

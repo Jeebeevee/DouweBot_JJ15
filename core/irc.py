@@ -190,7 +190,7 @@ class IRC(object):
 
     def cmd(self, command, params=None):
         if params:
-            params[-1] = ':' + params[-1]
+            params[-1] = ' ' + params[-1]
             self.send(command + ' ' + ' '.join(map(censor, params)))
         else:
             self.send(command)

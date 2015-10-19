@@ -9,7 +9,6 @@ import re
 
 from util import hook
 
-
 log_fds = {}  # '%(net)s %(chan)s' : (filename, fd)
 
 timestamp_format = '%H:%M:%S'
@@ -36,8 +35,8 @@ def get_log_filename(dir, server, chan):
 
 
 def gmtime(format):
-    return time.strftime(format, time.gmtime())
-
+    #return time.strftime(format, time.gmtime())
+    return time.strftime(format, time.localtime())
 
 def beautify(input):
     format = formats.get(input.command, '%(raw)s')
